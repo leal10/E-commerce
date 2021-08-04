@@ -1,6 +1,8 @@
 import React from 'react';
 import { AppBar, Toolbar, IconButton, Badge, Typography } from '@material-ui/core';
 import { ShoppingCart } from '@material-ui/icons';
+
+import { Link } from 'react-router-dom';
 import './style.css';
 
 class NavBar extends React.Component {
@@ -11,11 +13,15 @@ class NavBar extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className='margin'>
         <AppBar>
           <Toolbar>
-            <Typography variant='h6' color='inherit'>
+            <Typography component={Link} to='/' variant='h6' color='inherit'>
               NavBar
+            </Typography>
+            <div className='grow'/>
+            <Typography component={Link} to='/about' variant='h6' color='inherit'>
+              About
             </Typography>
             <div className='grow'/>
             <div>
